@@ -10,10 +10,10 @@ class SpringbootHtmlApplicationTests {
 
 	@Test
 	void contextLoads() {
-		User u=new User();
+		
 		System.out.println("Test started..-------->");
-		System.out.println(u.getEmail());
-		System.out.println("Test Ended..-------->");
+		
+	
 	}
 
 }
