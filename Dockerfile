@@ -3,7 +3,7 @@
 #COPY target/Sandapp-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
 # Use official OpenJDK image
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jre-jammy
 
 # Optional: set working directory
 WORKDIR /app
