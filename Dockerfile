@@ -1,13 +1,18 @@
 
-# Use official Tomcat image
-FROM tomcat:10.1.14-jdk17  
 
-# Copy your WAR file into Tomcat's webapps folder
-# Make sure your WAR file is named 'app.war'
-COPY target/Sandapp-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+#COPY target/Sandapp-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
-# Expose Tomcat port
-EXPOSE 8085
+# Use official OpenJDK image
+FROM openjdk:17-jdk-slim
 
-# Default command to run Tomcat
-CMD ["catalina.sh", "run"]
+# Optional: set working directory
+WORKDIR /app
+
+# Copy JAR file into container
+COPY target/Sandapp-0.0.1-SNAPSHOT.war /app/myapp.jar
+
+# Expose port your app listens on (Spring Boot default: 8080)
+EXPOSE 8082
+
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "myapp.jar"]
