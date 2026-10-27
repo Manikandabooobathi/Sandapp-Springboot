@@ -1,3 +1,8 @@
+# Temporary quick fix (gives all users read/write access to Docker socket)
+sudo chmod 666 /var/run/docker.sock
+
+
+
 # Sandapp-Springboot
 
 Run docker image
